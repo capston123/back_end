@@ -36,5 +36,21 @@
 |요청 url|/user_list|
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td></td>    <td></td>    <td></td> </tr></tr>  <tr>    </table>|
 |Respone Body|{<br>“username” : id,<br>“password” : encrypted password<br>}|
+<br></br>
+|다음 웹툰||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/daumwebtoon|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url<br>}|
+---
+<br></br>
+|네이버 웹툰||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/daumwebtoon|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url<br>}|
+---
 
 

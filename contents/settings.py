@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'addresses',
+    'webtoons',
+    'news',
+    'youtube'
 
 ]
 

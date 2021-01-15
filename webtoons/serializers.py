@@ -1,0 +1,19 @@
+from rest_framework import serializers
+from webtoons.models import Daum
+from webtoons.models import Naver
+
+
+class DaumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  Daum
+        fields = ['name', 'url', 'image']
+
+class NaverSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  Naver
+        fields = ['name', 'url', 'image']
+
+# class LoginSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Users
+#         fields = ['user_id', 'user_passward']
