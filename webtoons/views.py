@@ -5,8 +5,6 @@ from rest_framework.parsers import JSONParser
 from .serializers import *
 from webtoons.models import Naver,Daum
 # Create your views here.
-
-
     
 @csrf_exempt
 def daumwebtoon(request):
