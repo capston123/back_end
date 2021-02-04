@@ -36,6 +36,7 @@
 |요청 url|/user_list|
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td></td>    <td></td>    <td></td> </tr></tr>  <tr>    </table>|
 |Respone Body|{<br>“username” : id,<br>“password” : encrypted password<br>}|
+---
 <br></br>
 |다음 웹툰||
 |:-----------|---|
