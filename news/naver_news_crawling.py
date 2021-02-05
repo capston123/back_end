@@ -3,7 +3,14 @@
 이미지가 없거나 동영상 같은 경우는 신문사 로고로 대체
 """
 
+from news.models import News
 from selenium import webdriver
+
+import django
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "contents.settings")
+django.setup()
 
 
 def head_line_news(news_category):
@@ -66,6 +73,10 @@ def handle_news(url):
 
     driver.implicitly_wait(5)
     driver.get(url=URL_news_home)
+
+    obj = News(title=news_title, url=url,
+               image=news_thumbnail, category=news_category, newspaper=newspaper)
+    obj.save()
 
 
 def find_category(url):
