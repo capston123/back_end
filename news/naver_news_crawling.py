@@ -50,11 +50,18 @@ def handle_news(url):
 
     news_category = find_category(url)
 
+    news_thumbnail = ''
+    try:
+        news_thumbnail = driver.find_element_by_class_name('end_photo_org').find_element_by_tag_name(
+            'img').get_attribute('src')
+    except:
+        news_thumbnail = 'Video News'
+
     newspaper = driver.find_element_by_css_selector(
         '#articleBody > div.link_news > h3').text
     newspaper = newspaper.split(' ')[0]
 
-    print("url : " + url + "\nnews_title : " +
+    print("url : " + url + "\nnews_thumbnail : " + news_thumbnail + "\nnews_title : " +
           news_title + "\ncategory : " + news_category + "\nnewspaper : " + newspaper + "\n")
 
     driver.implicitly_wait(5)
