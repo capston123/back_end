@@ -4,7 +4,7 @@
 """
 
 from news.models import News
-from selenium import webdriver
+from datetime import date
 
 import django
 import os
@@ -12,6 +12,7 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "contents.settings")
 django.setup()
 
+from selenium import webdriver
 
 def head_line_news(news_category):
     li_list = driver.find_elements_by_css_selector(
@@ -74,9 +75,15 @@ def handle_news(url):
     driver.implicitly_wait(5)
     driver.get(url=URL_news_home)
 
-    obj = News(title=news_title, url=url,
-               image=news_thumbnail, category=news_category, newspaper=newspaper)
-    obj.save()
+    temp_data = []
+
+    temp_data.append(url)
+    temp_data.append(news_thumbnail)
+    temp_data.append(news_title)
+    temp_data.append(news_category)
+    temp_data.append(newspaper)
+
+    save_data.append(temp_data)
 
 
 def find_category(url):
@@ -108,6 +115,8 @@ driver.implicitly_wait(5)
 
 # news home으로 이동
 driver.get(url=URL_news_home)
+
+save_data = []
 
 # 헤드라인
 head_line = driver.find_elements_by_css_selector(
@@ -143,5 +152,10 @@ normal_news(world[0], 'world')
 it = driver.find_elements_by_css_selector(
     '#section_it > div.com_list')
 normal_news(it[0], 'it')
+
+for url, news_thumbnail, news_title, news_category, newspaper in save_data :
+    obj = News(url=url, image=news_thumbnail, title=news_title,
+               category=news_category, newspaper=newspaper)
+    obj.save()
 
 driver.close()
