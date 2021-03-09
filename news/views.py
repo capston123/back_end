@@ -6,7 +6,6 @@ from .serializers import *
 from news.models import News
 
 # Create your views here.
-
 @csrf_exempt
 def news(request):
     if request.method == 'POST':

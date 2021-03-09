@@ -3,7 +3,6 @@
 이미지가 없거나 동영상 같은 경우는 신문사 로고로 대체
 """
 
-from news.models import News
 from datetime import date
 
 import django
@@ -12,6 +11,7 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "contents.settings")
 django.setup()
 
+from news.models import News
 from selenium import webdriver
 
 def head_line_news(news_category):
@@ -45,7 +45,7 @@ def normal_news(news_category, str):
         url = li_list[i].find_element_by_css_selector(
             'a').get_attribute('href')
 
-        handle_news(url)
+        # handle_news(url)
 
 
 def handle_news(url):
