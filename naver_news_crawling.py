@@ -3,7 +3,6 @@
 이미지가 없거나 동영상 같은 경우는 신문사 로고로 대체
 """
 
-from datetime import date
 
 import django
 import os
@@ -11,8 +10,9 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "contents.settings")
 django.setup()
 
-from news.models import News
 from selenium import webdriver
+from news.models import News
+from datetime import date
 
 def head_line_news(news_category):
     li_list = driver.find_elements_by_css_selector(
@@ -45,7 +45,7 @@ def normal_news(news_category, str):
         url = li_list[i].find_element_by_css_selector(
             'a').get_attribute('href')
 
-        # handle_news(url)
+        handle_news(url)
 
 
 def handle_news(url):
@@ -108,7 +108,7 @@ options = webdriver.ChromeOptions()
 options.add_argument('window-size=1920,1080')
 
 URL_news_home = 'https://news.naver.com/'
-driver = webdriver.Chrome('chromedriver87', options=options)
+driver = webdriver.Chrome('chromedriver89', options=options)
 
 # 응답 대기
 driver.implicitly_wait(5)
@@ -153,8 +153,9 @@ it = driver.find_elements_by_css_selector(
     '#section_it > div.com_list')
 normal_news(it[0], 'it')
 
-for url, news_thumbnail, news_title, news_category, newspaper in save_data :
-    obj = News(url=url, image=news_thumbnail, title=news_title,
+print('---------------------------------')
+for url, news_thumbnail, news_title, news_category, newspaper in save_data:
+    obj = News(url=url, image=news_thumbnail, name=news_title,
                category=news_category, newspaper=newspaper)
     obj.save()
 
