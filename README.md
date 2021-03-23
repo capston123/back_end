@@ -62,3 +62,12 @@
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
 |Respone Body|{<br>“name” : name,<br>“url” : news url,<br>“image” : image url<br>}|
 ---
+
+<br></br>
+|유튜브||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/youtube|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“name” : name,<br>“url” : news url,<br>“image” : image url<br>"category":category<br>}|
+---

@@ -99,7 +99,7 @@ options = webdriver.ChromeOptions()
 options.add_argument('window-size=1920,1080')
 
 URL_webtoon_home = 'http://webtoon.daum.net/'
-driver = webdriver.Chrome('chromedriver87', options=options)
+driver = webdriver.Chrome('chromedriver89', options=options)
 
 driver.implicitly_wait(5)
 driver.get(url=URL_webtoon_home)

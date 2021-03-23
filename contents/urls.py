@@ -2,7 +2,7 @@ from django.urls import path, include
 from users import views as user_views
 from webtoons import views as webtoon_views
 from news import views as news_views
-
+from youtube import views as you_views
 
 urlpatterns = [
 
@@ -13,5 +13,6 @@ urlpatterns = [
     path('daumwebtoon/', webtoon_views.daumwebtoon),
     path('naverwebtoon/', webtoon_views.naverwebtoon),
     path('navernews/', news_views.news),
+    path('youtube/',you_views.youtube)
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
