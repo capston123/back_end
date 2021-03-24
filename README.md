@@ -62,3 +62,13 @@
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
 |Respone Body|{<br>“name” : name,<br>“url” : news url,<br>“image” : image url<br>}|
 ---
+
+<br></br>
+|사용자 기록||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/history|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> <tr>    <td>content_type</td>    <td>string</td>    <td>O</td> <tr>    <td>content_number</td>    <td>string</td>    <td>O</td>  </tr> </tr> </tr></table><br>ex ) user2021, youtube, 110|
+|Respone Body|{<br>“code” : “0000”,<br>“mag” : “데이터 전송 성공”<br>}|
+|code|<li>0000 - 데이터 전송 성공</li><li>1001 - 데이터 전송 성공</li>|
+---

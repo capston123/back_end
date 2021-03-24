@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'addresses',
     'webtoons',
     'news',
-    'youtube'
+    'youtube',
+    'history'
 
 ]
 
