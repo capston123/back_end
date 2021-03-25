@@ -7,7 +7,7 @@ from youtube.models import Youtube
 # Create your views here.
     
 @csrf_exempt
-def youtubewebtoon(request):
+def youtube(request):
     if request.method == 'POST':
         date = JSONParser().parse(request)['date']
         query_set = Youtube.objects.filter(date=date)
