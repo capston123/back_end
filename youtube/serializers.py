@@ -5,7 +5,7 @@ from youtube.models import Youtube
 class YoutubeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Youtube
-        fields = ['name', 'url', 'image', 'categori']
+        fields = ['name', 'url', 'image', 'category']
 
 
 # class LoginSerializer(serializers.ModelSerializer):
