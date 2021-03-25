@@ -13,6 +13,6 @@ urlpatterns = [
     path('daumwebtoon/', webtoon_views.daumwebtoon),
     path('naverwebtoon/', webtoon_views.naverwebtoon),
     path('navernews/', news_views.news),
-    path('youtube/',you_views.youtube)
+    path('youtube/',you_views.youtube),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
