@@ -6,7 +6,6 @@ from youtube import views as you_views
 from history import views as history_views
 
 urlpatterns = [
-
     path('user_list/', user_views.users),
     path('signup/', user_views.signup),
     path('login/', user_views.login),
@@ -14,7 +13,7 @@ urlpatterns = [
     path('daumwebtoon/', webtoon_views.daumwebtoon),
     path('naverwebtoon/', webtoon_views.naverwebtoon),
     path('navernews/', news_views.news),
-    path('youtube/',you_views.youtube)
+    path('youtube/',you_views.youtube),
     path('history/', history_views.hisotry),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
