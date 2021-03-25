@@ -79,3 +79,10 @@
 |Respone Body|{<br>“code” : “0000”,<br>“mag” : “데이터 전송 성공”<br>}|
 |code|<li>0000 - 데이터 전송 성공</li><li>1001 - 데이터 전송 성공</li>|
 ---
+|유튜브||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/youtube|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“name” : name,<br>“url” : news url,<br>“image” : image url<br>"category":category<br>}|
+---

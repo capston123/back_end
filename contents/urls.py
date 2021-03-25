@@ -4,6 +4,8 @@ from webtoons import views as webtoon_views
 from news import views as news_views
 from youtube import views as you_views
 from history import views as history_views
+from history import views as history_views
+from youtube import views as you_views
 
 urlpatterns = [
 
@@ -16,5 +18,7 @@ urlpatterns = [
     path('navernews/', news_views.news),
     path('youtube/',you_views.youtube)
     path('history/', history_views.hisotry),
+    path('history/', history_views.hisotry),
+    path('youtube/',you_views.youtube),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
