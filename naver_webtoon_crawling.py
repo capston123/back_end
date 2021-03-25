@@ -19,7 +19,7 @@ options = webdriver.ChromeOptions()
 options.add_argument('window-size=1920,1080')
 
 URL_webtoon_home = 'https://comic.naver.com/webtoon/weekday.nhn'
-driver = webdriver.Chrome('chromedriver87', options=options)
+driver = webdriver.Chrome('chromedriver89', options=options)
 
 # 응답 대기
 driver.implicitly_wait(5)
