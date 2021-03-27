@@ -35,7 +35,7 @@ def youtube_search():
     name = []
     thumbnail= []
     channel=[]
-    you='youtube.com/watch='
+    you='https://www.youtube.com/watch?v='
     # Add each result to the appropriate list, and then display the lists of
     # matching videos, channels, and playlists.
     print(search_response.get("items", [])[0])
