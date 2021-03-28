@@ -24,7 +24,7 @@ def youtube_search():
     # Call the search.list method to retrieve results matching the specified
     # query term.
     search_response = youtube.videos().list(
-        part="player,snippet",
+        part="id,snippet",
         maxResults=10,
         chart="mostPopular",
         regionCode='kr'
@@ -35,20 +35,19 @@ def youtube_search():
     name = []
     thumbnail= []
     channel=[]
-
+    you='https://www.youtube.com/watch?v='
     # Add each result to the appropriate list, and then display the lists of
     # matching videos, channels, and playlists.
-    # print(search_response.get("items", [])[0])
+    print(search_response.get("items", [])[0])
+
     for search_result in search_response.get("items", []):
         thumbnail.append(search_result['snippet']['thumbnails']['default']['url'])
         name.append(search_result['snippet']['title'])
         channel.append(search_result['snippet']['channelTitle'])
     
         categori.append(search_result['snippet']['categoryId'])
-        p=re.compile('www+.+(?=\" f)')
-        url_raw=search_result['player']['embedHtml']
-        s=p.search(url_raw)
-        url.append(s.group())
+        url.append(you+search_result['id'])
+        
     
     contents=list(zip(url,categori,name,thumbnail,channel))
     for i in contents:
