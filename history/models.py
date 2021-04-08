@@ -6,5 +6,6 @@ class History(models.Model):
     user_id = models.TextField()
     category = models.TextField()
     content_number = models.TextField()
+    content_class=models.TextField()
     date_time = models.TextField(default=datetime.now())
     
