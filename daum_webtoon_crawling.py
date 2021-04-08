@@ -87,12 +87,11 @@ def daum_crawling(li_list, num):
         finally :            
             driver.implicitly_wait(5)
             driver.get(url=URL_webtoon_home)
+
+def data_save():
     for name, url, image, category in save_data:
         obj = Daum(name=name, url=url, image=image, category=category)
         obj.save()
-
-
-
 
 # chrome 창 크기 조절
 options = webdriver.ChromeOptions()
@@ -109,3 +108,5 @@ li_list_down = driver.find_elements_by_css_selector('#dayList2 > li')
 
 daum_crawling(li_list_up, 1)
 daum_crawling(li_list_down, 2)
+
+data_save()

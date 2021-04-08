@@ -77,8 +77,10 @@
 |요청 url|/history|
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> <tr>    <td>content_type</td>    <td>string</td>    <td>O</td> <tr>    <td>content_number</td>    <td>string</td>    <td>O</td>  </tr> </tr> </tr></table><br>ex ) user2021, youtube, 110|
 |Respone Body|{<br>“code” : “0000”,<br>“mag” : “데이터 전송 성공”<br>}|
-|code|<li>0000 - 데이터 전송 성공</li><li>1001 - 데이터 전송 성공</li>|
+|code|<li>0000 - 데이터 전송 성공</li><li>1001 - 데이터 전송 실패</li>|
 ---
+
+<br></br>
 |유튜브||
 |:-----------|---|
 |HTTP Method|POST|
