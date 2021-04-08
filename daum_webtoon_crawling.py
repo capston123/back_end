@@ -110,3 +110,5 @@ daum_crawling(li_list_up, 1)
 daum_crawling(li_list_down, 2)
 
 data_save()
+
+driver.close()
