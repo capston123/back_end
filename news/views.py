@@ -12,7 +12,7 @@ from news.models import News
 def news(request):
     if request.method == 'POST':
         date = JSONParser().parse(request)['date']
-        query_set = News.objects.filter(date=date)
+        query_set = News.objects.filter(date__istartswith=date)
         serializer = NewsSerializer(query_set,many=True)
 
         return JsonResponse(serializer.data,safe=False)

@@ -10,7 +10,7 @@ from webtoons.models import Naver,Daum
 def daumwebtoon(request):
     if request.method == 'POST':
         date = JSONParser().parse(request)['date']
-        query_set = Daum.objects.filter(date=date)
+        query_set = Daum.objects.filter(date__istartswith=date)
         serializer = DaumSerializer(query_set,many=True)
 
         return JsonResponse(serializer.data,safe=False)
@@ -19,7 +19,7 @@ def daumwebtoon(request):
 def naverwebtoon(request):
     if request.method == 'POST':
         date = JSONParser().parse(request)['date']
-        query_set = Naver.objects.filter(date=date)
+        query_set = Naver.objects.filter(date__istartswith=date)
         serializer = NaverSerializer(query_set,many=True)
 
         return JsonResponse(serializer.data,safe=False)

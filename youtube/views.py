@@ -10,7 +10,7 @@ from youtube.models import Youtube
 def youtube(request):
     if request.method == 'POST':
         date = JSONParser().parse(request)['date']
-        query_set = Youtube.objects.filter(date=date)
+        query_set = Youtube.objects.filter(date__istartswith=date)
         serializer = YoutubeSerializer(query_set,many=True)
 
         return JsonResponse(serializer.data,safe=False)
