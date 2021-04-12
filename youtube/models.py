@@ -8,4 +8,4 @@ class Youtube(models.Model):
     image = models.TextField()
     category = models.TextField()
     channel = models.TextField()
-    date = models.TextField(default=timezone.localtime())
+    date = models.DateTimeField(auto_now_add=True)

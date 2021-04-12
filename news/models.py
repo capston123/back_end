@@ -10,4 +10,4 @@ class News(models.Model):
     name = models.TextField()
     newspaper = models.TextField()
     category = models.TextField()
-    date = models.TextField(default=timezone.localtime())
+    date = models.DateTimeField(auto_now_add=True)

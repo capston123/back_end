@@ -8,7 +8,7 @@ class Daum(models.Model):
     url = models.TextField()
     image = models.TextField()
     category = models.TextField()
-    date = models.TextField(default=timezone.localtime())
+    date = models.DateTimeField(auto_now_add=True)
 
 
 class Naver(models.Model):
@@ -16,4 +16,4 @@ class Naver(models.Model):
     url = models.TextField()
     image = models.TextField()
     category = models.TextField()
-    date = models.TextField(default=timezone.localtime())
+    date = models.DateTimeField(auto_now_add=True)

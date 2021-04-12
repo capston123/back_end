@@ -7,5 +7,5 @@ class History(models.Model):
     category = models.TextField()
     content_number = models.TextField()
     content_class=models.TextField()
-    date_time = models.TextField(default=datetime.now())
+    date_time = models.DateTimeField(auto_now_add=True)
     
