@@ -1,5 +1,6 @@
 from django.db import models
-from datetime import date
+from django.utils import timezone
+
 # Create your models here.
 class Youtube(models.Model):
     name = models.CharField(max_length=100)
@@ -7,4 +8,4 @@ class Youtube(models.Model):
     image = models.TextField()
     category = models.TextField()
     channel = models.TextField()
-    date = models.TextField(default=date.today())
+    date = models.TextField(default=timezone.localtime())

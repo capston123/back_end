@@ -5,6 +5,8 @@ from rest_framework.parsers import JSONParser
 from .serializers import *
 from news.models import News
 
+
+
 # Create your views here.
 @csrf_exempt
 def news(request):

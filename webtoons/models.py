@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from django.utils import timezone
 # Create your models here.
 
 
@@ -8,7 +8,7 @@ class Daum(models.Model):
     url = models.TextField()
     image = models.TextField()
     category = models.TextField()
-    date = models.TextField(default=date.today())
+    date = models.TextField(default=timezone.localtime())
 
 
 class Naver(models.Model):
@@ -16,4 +16,4 @@ class Naver(models.Model):
     url = models.TextField()
     image = models.TextField()
     category = models.TextField()
-    date = models.TextField(default=date.today())
+    date = models.TextField(default=timezone.localtime())

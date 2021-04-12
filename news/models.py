@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from django.utils import timezone
 
 # Create your models here.
 
@@ -10,4 +10,4 @@ class News(models.Model):
     name = models.TextField()
     newspaper = models.TextField()
     category = models.TextField()
-    date = models.TextField(default=date.today())
+    date = models.TextField(default=timezone.localtime())
