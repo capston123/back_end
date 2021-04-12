@@ -43,7 +43,7 @@
 |HTTP Method|POST|
 |요청 url|/daumwebtoon|
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
-|Respone Body|{<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url<br>}|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url,<br>“category” : category<br>}|
 ---
 <br></br>
 |네이버 웹툰||
@@ -51,7 +51,7 @@
 |HTTP Method|POST|
 |요청 url|/naverwebtoon|
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
-|Respone Body|{<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url<br>}|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url,<br>“category” : category<br>}|
 ---
 
 <br></br>
@@ -60,7 +60,7 @@
 |HTTP Method|POST|
 |요청 url|/navernews|
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
-|Respone Body|{<br>“name” : name,<br>“url” : news url,<br>“image” : image url<br>}|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : news url,<br>“image” : image url,<br>“category” : category<br>}|
 ---
 
 <br></br>
@@ -69,22 +69,84 @@
 |HTTP Method|POST|
 |요청 url|/youtube|
 |Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
-|Respone Body|{<br>“name” : name,<br>“url” : news url,<br>“image” : image url<br>"category":category<br>}|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : youtube url,<br>“image” : image url,<br>"category":category<br>}|
 ---
-|사용자 기록||
+<br></br>
+|사용자 기록 전송||
 |:-----------|---|
 |HTTP Method|POST|
 |요청 url|/history|
-|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> <tr>    <td>content_type</td>    <td>string</td>    <td>O</td> <tr>    <td>content_number</td>    <td>string</td>    <td>O</td>  </tr> </tr> </tr></table><br>ex ) user2021, youtube, 110|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> <tr>    <td>content_class</td>    <td>string</td>    <td>O</td> <tr>    <td>content_number</td>    <td>string</td>    <td>O</td>  </tr><tr>    <td>content_id</td>    <td>string</td>    <td>O</td>  </tr> </tr> </tr></table><br>ex ) user2021, youtube, 110|
 |Respone Body|{<br>“code” : “0000”,<br>“mag” : “데이터 전송 성공”<br>}|
 |code|<li>0000 - 데이터 전송 성공</li><li>1001 - 데이터 전송 실패</li>|
 ---
 
 <br></br>
-|유튜브||
+|사용자기록 다음 웹툰||
 |:-----------|---|
 |HTTP Method|POST|
-|요청 url|/youtube|
-|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>date</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
-|Respone Body|{<br>“name” : name,<br>“url” : news url,<br>“image” : image url<br>"category":category<br>}|
+|요청 url|/history_dt|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url,<br>“category” : category<br>}|
+---
+<br></br>
+|사용자기록 네이버 웹툰||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/history_nt|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url,<br>“category” : category<br>}|
+---
+
+<br></br>
+|사용자기록 네이버 뉴스||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/history_ns|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : news url,<br>“image” : image url,<br>“category” : category<br>}|
+---
+
+<br></br>
+|사용자기록 유튜브||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/history_yt|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : youtube url,<br>“image” : image url,<br>"category":category<br>}|
+---
+
+<br></br>
+|추천 다음 웹툰||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/recommend_dt/|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url,<br>“category” : category<br>}|
+---
+<br></br>
+|추천 네이버 웹툰||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/recommend_nt/|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : webtoon url,<br>“image” : image url,<br>“category” : category<br>}|
+---
+
+<br></br>
+|추천 네이버 뉴스||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/recommend_ns|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : news url,<br>“image” : image url,<br>“category” : category<br>}|
+---
+
+<br></br>
+|추천 유튜브||
+|:-----------|---|
+|HTTP Method|POST|
+|요청 url|/recommend_yt|
+|Request Parameters|<table><tr> <th>Name</th>    <th>Type</th>    <th>Madatory</th>  </tr>  <tr>    <td>user_id</td>    <td>string</td>    <td>O</td> </tr></table><br>ex ) 2021-01-07|
+|Respone Body|{<br>“id” : id,<br>“name” : name,<br>“url” : youtube url,<br>“image” : image url,<br>"category":category<br>}|
 ---
