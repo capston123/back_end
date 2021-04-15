@@ -77,7 +77,7 @@ def daum_crawling(li_list, num):
             temp_data = []
 
             temp_data.append(webtoon_title+' '+recent_title)
-            temp_data.append(recent_url)
+            temp_data.append(recent_url[:24]+'m/'+recent_url[24:])
             temp_data.append(recent_thumbnail)
             temp_data.append(webtoon_category)
 
